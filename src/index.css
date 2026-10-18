@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Custom agriculture gradient and animation utilities */
+.agri-gradient {
+  background: linear-gradient(135deg, #14532d 0%, #15803d 50%, #16a34a 100%);
+}
+
+.agri-gradient-subtle {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.harvest-gradient {
+  background: linear-gradient(135deg, #854d0e 0%, #ca8a04 50%, #eab308 100%);
+}
+
+/* Smooth pulse for live badges */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Print styling for receipts & digital Kisan Card */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
